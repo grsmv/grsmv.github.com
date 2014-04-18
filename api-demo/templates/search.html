@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <h3>Пошук та фільтрація</h3>
+
+        <br/>
+
+        <input class="form-control" type="search" ng-model="query" />
+
+        <br/>
+
+        <table class="table" ng-show="results">
+            <thead>
+                <tr>
+                    <th>Код</th>
+                    <th>Назва</th>
+                    <th>Всього</th>
+                    <th>Рік</th>
+                    <th>Область</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="result in results">
+                    <td>{{ result.code }}</td>
+                    <td>{{ result.code_name }}</td>
+                    <td>{{ result.total | formatMoney }}</td>
+                    <td>{{ result.year }}</td>
+                    <td>{{ areaName(result.area_id) }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="alert alert-warning" ng-show="!results">
+            Пошукайте шонебудь
+        </div>
+    </div>
+</div>

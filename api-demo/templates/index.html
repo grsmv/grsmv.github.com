@@ -1,0 +1,37 @@
+<div id="wrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Розподіл витрат по галузям</h3>
+
+                <br/>
+
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default" ng-model="radioModel" btn-radio="'1'">Мадицина</button>
+                    <button type="button" class="btn btn-default" ng-model="radioModel" btn-radio="'2'">Середня освіта</button>
+                    <button type="button" class="btn btn-default" ng-model="radioModel" btn-radio="'3'">Ще щось</button>
+                </div>
+
+                <br/>
+                <br/>
+
+                <div>
+                    <nvd3-pie-chart
+                            data="data"
+                            id="pieExample"
+                            width="500"
+                            height="500"
+                            x="xFunction()"
+                            y="yFunction()"
+                            showLabels="true"
+                            showLegend="true"
+                            labelType="percent"
+                            donut="true"
+                            donutLabelsOutside="true">
+                        <svg></svg>
+                    </nvd3-pie-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
